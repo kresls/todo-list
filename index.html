@@ -8,14 +8,32 @@
   </head>
   <body>
     <div id="root">
-      <h1>TO-DO LIST</h1>
+      <header>
+        <h1>TO-DO LIST</h1>
+        <button id="btn-toggle-info" title="Show information about app">i</button>
+        <div class="info">
+          <ul>
+            <li>Add a text item by pressing enter or clicking the "ADD" buton</li>
+            <li>Rearrange the items by dragging and dropping, or clicking the up and down arrows</li>
+            <li>Remove an item by clicking the "X" button</li>
+            <li>Click the "i" button again to hide this information</li>
+          </ul>
+        </div>
+      </header>
+
       <form id="add-item">
         <input type="text" autofocus>
-        <input type="submit" value="Add">
+        <input type="submit" value="Add" title="Add new item">
       </form>
+
       <div id="list"></div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script
+			  src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+			  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+			  crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 #root {
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   height: 90vh;
@@ -7,38 +8,104 @@
   align-items: center;
 }
 
+header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#btn-toggle-info {
+  margin-left: auto;
+  height: 45px;
+  width: 45px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 22.5px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: serif;
+}
+
+.info {
+  display: none;
+  margin-bottom: 1em;
+}
+
+.show {
+  display: block;
+}
+
+#add-item {
+  width: 90%;
+  display: flex;
+}
+
+#add-item input[type="text"] {
+  width: 75%;
+  padding: 0.5em;
+}
+
+#add-item input[type="submit"] {
+  width: 20%;
+  margin-left: auto;
+}
+
 #list {
   width: 90vw;
 }
 
 .list-item {
-  margin: 0.5em 0;
   padding: 1em;
   display: flex;
   flex-direction: row;
-  align-items: center;
   border-bottom: 1px solid black;
   justify-content: flex-start;
+}
+
+.list-item button {
+  height: 30px;
 }
 
 .list-item:last-child {
   border-bottom: none;
 }
 
+#add-item input,
+.list-item button {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+#add-item input,
+.list-item button,
+#btn-toggle-info {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.list-item button,
+#add-item input[type="submit"] {
+  text-transform: uppercase;
+  margin-right: 0.4em;
+  cursor: pointer;
+  background-color: white;
+}
+
+.list-item button:hover,
+#add-item input[type="submit"]:hover {
+  background-color: rgba(12, 12, 12, 0.151);
+}
+
 /* Change button visibility and establish button margins */
+.list-item:first-child button.btn-move-up,
 .list-item:last-child button.btn-move-down {
   display: none;
 }
+
+.list-item:only-child button,
+.btn-move-up,
+.list-item:first-child button.btn-move-down,
 .list-item:last-child button.btn-move-up {
-  margin-left: auto;
-}
-.list-item:first-child button.btn-move-up {
-  display: none;
-}
-.list-item:first-child button.btn-move-down {
-  margin-left: auto;
-}
-.list-item:only-child button {
   margin-left: auto;
 }
 
@@ -47,19 +114,25 @@
   margin-right: 1em;
 }
 
-.btn-del,
-.btn-move-up,
-.btn-move-down {
-  height: 30px;
+.btn-del {
+  color: red;
 }
 
-.btn-move-up {
-  margin-left: auto;
+.btn-move-up,
+.btn-move-down {
+  color: rgba(0, 26, 139, 0.7);
+}
+
+.ui-sortable-helper {
+  border: none;
+  background-color: rgba(21, 21, 21, 0.05);
 }
 
 /* Rules for desktop only */
 @media only screen and (min-width: 1025px) {
-  #list {
+  header,
+  #list,
+  #add-item {
     max-width: 600px;
   }
 }
