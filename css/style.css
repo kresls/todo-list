@@ -1,0 +1,65 @@
+#root {
+  margin: 0;
+  padding: 0;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list {
+  width: 90vw;
+}
+
+.list-item {
+  margin: 0.5em 0;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid black;
+  justify-content: flex-start;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+/* Change button visibility and establish button margins */
+.list-item:last-child button.btn-move-down {
+  display: none;
+}
+.list-item:last-child button.btn-move-up {
+  margin-left: auto;
+}
+.list-item:first-child button.btn-move-up {
+  display: none;
+}
+.list-item:first-child button.btn-move-down {
+  margin-left: auto;
+}
+.list-item:only-child button {
+  margin-left: auto;
+}
+
+.item-text,
+.item-number {
+  margin-right: 1em;
+}
+
+.btn-del,
+.btn-move-up,
+.btn-move-down {
+  height: 30px;
+}
+
+.btn-move-up {
+  margin-left: auto;
+}
+
+/* Rules for desktop only */
+@media only screen and (min-width: 1025px) {
+  #list {
+    max-width: 600px;
+  }
+}
